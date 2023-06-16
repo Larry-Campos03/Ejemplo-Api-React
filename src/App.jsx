@@ -1,7 +1,12 @@
 import './App.css'
+import Index from './paginas/home'
 
 function App() {
-  return <></>
+  return (
+    <>
+      <Index />
+    </>
+  )
 }
 
 export default App
