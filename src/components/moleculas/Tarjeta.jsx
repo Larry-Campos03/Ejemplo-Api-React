@@ -1,16 +1,17 @@
-import Imagen from '../atomos/Imagen'
-import Parrafo from '../atomos/Parrafo'
-import Titulo from '../atomos/Titulo'
+import Imagen from '../atomos/Imagen/Imagen'
+import Parrafo from '../atomos/Parrafo/Parrafo'
+import Titulo from '../atomos/Titulo/Titulo'
+import './Tarjeta.css'
 
 // eslint-disable-next-line react/prop-types
-function Tarjeta({ img, nombre, descripcion }) {
+function Tarjeta ({ img, nombre, descripcion }) {
   return (
-    <article className="">
-      <div className="">
+    <article className='container-tarjeta'>
+      <div className='container-tarjeta__imagen'>
         <Imagen recurso={img} descripcion={descripcion} />
       </div>
-      <div className="">
-        <Titulo tipo="h2" titulo={nombre} />
+      <div className='container-tarjeta__contenido'>
+        <Titulo tipo='h2' titulo={nombre} />
         <Parrafo contenido={descripcion} />
       </div>
     </article>

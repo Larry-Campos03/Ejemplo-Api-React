@@ -1,5 +1,7 @@
+import './Titulo.css'
+
 // eslint-disable-next-line react/prop-types
-function Titulo({ tipo, titulo }) {
+function Titulo ({ tipo, titulo }) {
   return (
     <>
       {tipo === 'h1' && <h1>{titulo}</h1>}

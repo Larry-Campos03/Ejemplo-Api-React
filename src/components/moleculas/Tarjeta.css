@@ -1,0 +1,10 @@
+.container-tarjeta{
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-tarjeta__contenido{
+    text-align: center;
+    color: #A4A0AB;
+}

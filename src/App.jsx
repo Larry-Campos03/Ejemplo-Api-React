@@ -1,7 +1,7 @@
 import './App.css'
 import Index from './paginas/home'
 
-function App() {
+function App () {
   return (
     <>
       <Index />

@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-function Parrafo({ contenido }) {
+function Parrafo ({ contenido }) {
   return <p>{contenido}</p>
 }
 

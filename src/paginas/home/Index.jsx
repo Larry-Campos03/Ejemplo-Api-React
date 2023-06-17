@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
-import Recuadro from '../../components/templates/Recuadro';
-import Tarjeta from '../../components/moleculas/Tarjeta';
+import { useState, useEffect } from 'react'
+import Recuadro from '../../components/templates/Recuadro'
+import Tarjeta from '../../components/moleculas/Tarjeta'
 
-function Index() {
-  const [personajes, setPersonajes] = useState([]);
+function Index () {
+  const [personajes, setPersonajes] = useState([])
 
   useEffect(() => {
     fetch('https://rickandmortyapi.com/api/character')
       .then((respuesta) => respuesta.json())
-      .then((datos) => setPersonajes(datos.results));
-  }, []);
+      .then((datos) => setPersonajes(datos.results))
+  }, [])
 
   return (
     <>
@@ -24,7 +24,7 @@ function Index() {
         ))}
       </Recuadro>
     </>
-  );
+  )
 }
 
-export default Index;
+export default Index
