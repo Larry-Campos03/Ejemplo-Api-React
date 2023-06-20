@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Recuadro from '../../components/templates/Recuadro'
 import Tarjeta from '../../components/moleculas/Tarjeta'
+import Titulo from '../../components/atomos/Titulo/Titulo'
 
 function Index () {
   const [personajes, setPersonajes] = useState([])
@@ -8,12 +9,15 @@ function Index () {
   useEffect(() => {
     fetch('https://rickandmortyapi.com/api/character')
       .then((respuesta) => respuesta.json())
-      .then((datos) => setPersonajes(datos.results))
+      .then((datos) => {
+        const {results} = datos
+        setPersonajes(results)
+      })
   }, [])
 
   return (
     <>
-      <Recuadro>
+      {personajes ? <Recuadro>
         {personajes.map((personaje) => (
           <Tarjeta
             key={personaje.id}
@@ -22,7 +26,7 @@ function Index () {
             descripcion={personaje.species}
           />
         ))}
-      </Recuadro>
+      </Recuadro> : <Titulo tipo='h1' titulo='Error, no se encuentran los elementos'/>}
     </>
   )
 }
