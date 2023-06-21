@@ -10,23 +10,25 @@ function Index () {
     fetch('https://rickandmortyapi.com/api/character')
       .then((respuesta) => respuesta.json())
       .then((datos) => {
-        const {results} = datos
+        const { results } = datos
         setPersonajes(results)
       })
   }, [])
 
   return (
     <>
-      {personajes ? <Recuadro>
-        {personajes.map((personaje) => (
-          <Tarjeta
-            key={personaje.id}
-            img={personaje.image}
-            nombre={personaje.name}
-            descripcion={personaje.species}
-          />
-        ))}
-      </Recuadro> : <Titulo tipo='h1' titulo='Error, no se encuentran los elementos'/>}
+      {personajes
+        ? <Recuadro>
+          {personajes.map((personaje) => (
+            <Tarjeta
+              key={personaje.id}
+              img={personaje.image}
+              nombre={personaje.name}
+              descripcion={personaje.species}
+            />
+          ))}
+        </Recuadro>
+        : <Titulo tipo='h1' titulo='Error, no se encuentran los elementos' />}
     </>
   )
 }
