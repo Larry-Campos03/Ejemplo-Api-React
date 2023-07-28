@@ -4,16 +4,20 @@ import Tarjeta from '../../components/moleculas/Tarjeta'
 import Titulo from '../../components/atomos/Titulo/Titulo'
 
 function Index () {
+
   const [personajes, setPersonajes] = useState([])
+  const [pagina, setPagina] = useState(3)
+
+  const URL_API = `https://rickandmortyapi.com/api/character?page=${pagina}`
 
   useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character')
+    fetch(URL_API)
       .then((respuesta) => respuesta.json())
       .then((datos) => {
         const { results } = datos
         setPersonajes(results)
       })
-  }, [])
+  }, [pagina])
 
   return (
     <>
